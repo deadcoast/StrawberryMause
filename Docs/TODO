@@ -1,0 +1,12 @@
+# Docs TODO (OATHKEEPER)
+
+- [ ] Fix remaining bad anchor syntax (|# → #) across repo
+- [ ] Normalize path casing to `Docs/`
+- [ ] Replace `../modules/` with `Docs/modules/`
+- [ ] Add annotated mauson examples (valid/invalid)
+- [ ] Add screenshots placeholders for Permissions UX
+- [ ] Add debug HUD spec and thresholds JSON
+- [ ] Provide checksum algorithm choice and sample migration outline
+- [ ] Map tests to acceptance criteria per module
+- [ ] Add WCAG color contrast targets
+- [ ] Define conflict resolution precedence and time-scale math

@@ -12,7 +12,7 @@ Main entry point for the StrawberryMaus documentation system.
 
 ### Documentation Hub
 
-- [Docs/INDEX.md](./Docs/INDEX.md) - Complete documentation index
+- [Docs/Application-Index.md](./Docs/Application-Index.md) - Complete documentation index
 
 ### Quick Navigation
 

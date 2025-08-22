@@ -1,0 +1,44 @@
+[tool.black]
+line-length = 88
+target-version = ['py311']
+include = '\\.pyi?$'
+
+[tool.ruff]
+target-version = 'py311'
+line-length = 88
+fix = true
+select = [
+  "E",  # pycodestyle errors
+  "F",  # pyflakes
+  "I",  # isort
+  "UP", # pyupgrade
+  "B",  # flake8-bugbear
+  "ANN" # annotations
+]
+ignore = [
+  "ANN101", # ignore missing type annotations for self
+  "ANN102"  # ignore missing type annotations for cls
+]
+exclude = [
+  ".git",
+  "__pycache__",
+  "build",
+  "dist",
+  ".venv",
+]
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+line-ending = "lf"
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.pyright]
+pythonVersion = "3.11"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"

@@ -36,38 +36,38 @@
 ### Core System
 
 [SystemArchitecture](sys-architecture.md) | tag: [#SystemArchitecture]  
-[ImplementationGuide](docs/implementation_guide/implementation_guide.md) | tag: [#ImplementationGuide]
-[ImplementationGuide.json](docs/implementation_guide/implementation_guide.json) | tag: [#ImplementationGuide.json]
+[ImplementationGuide](Docs/implementation_guide/implementation_guide.md) | tag: [#ImplementationGuide]
+[ImplementationGuide.json](Docs/implementation_guide/implementation_guide.json) | tag: [#ImplementationGuide.json]
 [AIInstructionSet](AI-Collaberation-Guide.md) | tag: [#AIInstructionSet]
 
 ### Data & Flow
 
-[DataFlowSpec](sys-architecture.md|#data_flow_spec) |  tag: [#DataFlowSpec]
-[MathGridSystem](sys-architecture.md|#mathematical_grid) | tag: [#MathGridSystem]  
-[TimelineInterface](sys-architecture.md|#timeline_interface) | tag: [#TimelineInterface]
-[TimelineInterface](Docs/implementation_guide/implementation_guide.md|#timeline_interface) | tag: [#TimelineInterface]
+[DataFlowSpec](./sys-architecture.md#data_flow_spec) |  tag: [#DataFlowSpec]
+[MathGridSystem](./sys-architecture.md#mathematical_grid) | tag: [#MathGridSystem]  
+[TimelineInterface](./sys-architecture.md#timeline_interface) | tag: [#TimelineInterface]
+[Timeline Interface Implementation](./Docs/implementation_guide/implementation_guide.md#timeline-interface-implementation) | tag: [#TimelineInterface]
 
 ### Frontend Modules
 
-[../modules/BerryTimeline-Guide.md](../modules/BerryTimeline-Guide.md) | tag:[#BerryTimeline]
-[../modules/BerryWindow-Guide.md](../modules/BerryWindow-Guide.md) | tag: [#BerryWindow]
+[Docs/modules/BerryTimeline-Guide.md](./Docs/modules/BerryTimeline-Guide.md) | tag:[#BerryTimeline]
+[Docs/modules/BerryWindow-Guide.md](./Docs/modules/BerryWindow-Guide.md) | tag: [#BerryWindow]
 
 ### Backend Modules
 
-[MathMausModule](/docs/architecture/MathMaus.md) | tag: [#MathMaus]  
-[MausDataMap](docs/architecture/MausDataMap.md) | tag: [#MausDataMap]
+[MathMausModule](./Docs/architecture/MathMaus.md) | tag: [#MathMaus]  
+[MausDataMap](./Docs/architecture/MausDataMap.md) | tag: [#MausDataMap]
 
 ### System Specs
 
-[PerformanceSpecs](performance_specs.md) | tag: [#PerformanceSpecs]  
-[PlatformIntegration](platform_integration.md) | tag: [#PlatformIntegration]  
-[VisualDesign](visual_design_spec.md) | tag: [#VisualDesign]
+[PerformanceSpecs](./sys-architecture.md#performance_specs) | tag: [#PerformanceSpecs]  
+[PlatformIntegration](./sys-architecture.md#platform_integration) | tag: [#PlatformIntegration]  
+[VisualDesign](./sys-architecture.md#visual_design_spec) | tag: [#VisualDesign]
 
 ### Development
 
-[Extensions](extension_capabilities.md) | tag: [#Extensions]  
-[VersionControl](version_control.md) | tag: [#VersionControl]  
-[Roadmap](dev_roadmap.md) | tag: [#Roadmap]
+[Extensions](./sys-architecture.md#extension_capabilities) | tag: [#Extensions]  
+[VersionControl](./sys-architecture.md#version_control) | tag: [#VersionControl]  
+[Roadmap](./sys-architecture.md#dev_roadmap) | tag: [#Roadmap]
 
 ---
 
@@ -161,18 +161,18 @@
 ### Root Docs Folder
 
 - Overview: [Docs/Overview.md](./Docs/Overview.md)
-- Performance: [Docs/Performance.md](./Docs/Performance.md)
-- Plugins: [Docs/Plugins.md](./Docs/Plugins.md)
-- Security & Privacy: [Docs/Security-Privacy.md](./Docs/Security-Privacy.md)
-- Shortcuts: [Docs/Shortcuts.md](./Docs/Shortcuts.md)
-- Troubleshooting: [Docs/Troubleshooting.md](./Docs/Troubleshooting.md)
-- FAQ: [Docs/FAQ.md](./Docs/FAQ.md)
-- Glossary: [Docs/Glossary.md](./Docs/Glossary.md)
+- Performance: [Docs/support/Performance.md](./Docs/support/Performance.md)
+- Plugins: [Docs/support/Plugins.md](./Docs/support/Plugins.md)
+- Security & Privacy: [Docs/support/Security-Privacy.md](./Docs/support/Security-Privacy.md)
+- Shortcuts: [Docs/user/Shortcuts.md](./Docs/user/Shortcuts.md)
+- Troubleshooting: [Docs/user/Troubleshooting.md](./Docs/user/Troubleshooting.md)
+- FAQ: [Docs/user/FAQ.md](./Docs/user/FAQ.md)
+- Glossary: [Docs/reference/Glossary.md](./Docs/reference/Glossary.md)
 
 ### JSON Documentation
 
-- Implementation Guide (JSON): [Docs/json/implementation_guide.json](./Docs/json/implementation_guide.json)
-- Implementation Guide (MD): [Docs/json/implementation_guide.md](./Docs/json/implementation_guide.md)
+- Implementation Guide (JSON): [Docs/implementation_guide/implementation_guide.json](./Docs/implementation_guide/implementation_guide.json)
+- Implementation Guide (MD): [Docs/implementation_guide/implementation_guide.md](./Docs/implementation_guide/implementation_guide.md)
 
 ---
 

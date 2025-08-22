@@ -2,6 +2,15 @@
 
 Support Documentation
 
+## Quick Links
+
+- Performance: [Performance.md](./Performance.md)
+- Performance Playbook: [Performance-Playbook.md](./Performance-Playbook.md)
+- Permissions UX: [Permissions-UX.md](./Permissions-UX.md)
+- Security & Privacy: [Security-Privacy.md](./Security-Privacy.md)
+- Accessibility: [Accessibility.md](./Accessibility.md)
+- Plugins & Extensions: [Plugins.md](./Plugins.md)
+
 ## Overview
 
 Support resources for system optimization, security, and accessibility.

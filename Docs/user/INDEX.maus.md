@@ -1,6 +1,16 @@
 # Docs/user/INDEX.md
 
-User Documentation
+User Documentation Index
+
+- Getting Started: [Getting-Started.md](./Getting-Started.md)
+- Installation & Permissions: [Installation-Permissions.md](./Installation-Permissions.md)
+- Recording Guide: [Recording-Guide.md](./Recording-Guide.md)
+- Editing Guide: [Editing-Guide.md](./Editing-Guide.md)
+- Advanced Editing: [Advanced-Editing.md](./Advanced-Editing.md)
+- Playback Guide: [Playback-Guide.md](./Playback-Guide.md)
+- Shortcuts: [Shortcuts.md](./Shortcuts.md)
+- Troubleshooting: [Troubleshooting.md](./Troubleshooting.md)
+- FAQ: [FAQ.md](./FAQ.md)
 
 ## Overview
 
