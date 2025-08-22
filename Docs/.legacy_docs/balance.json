@@ -1,0 +1,19 @@
+{
+ "Balance":[
+    "[1:(Language in a condensed manner with adequate context)",
+    "[2:(Amount of relevant data utilized for code changes)"
+   ],
+    "(prohib)":{
+        "glob":"**/*.quantum"
+    },
+    "(formulate)":[
+        "SupportedTheory"
+    ],
+    "(integrate)":[
+        ".maus",
+        ".mauson"
+    ]
+}
+
+
+

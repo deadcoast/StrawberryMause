@@ -1,0 +1,16 @@
+{
+"{MouseClickEvent}":"(eventData)",
+    "(eventData)":"{Export}:[math_maus]",
+        "#MathKaus":{
+            "{Sanitize}":"(eventData)",
+                "{Output}":"(rawData)",
+            "{Export}":"(rawData):[maus_data_map]"
+        },
+        "#MausDataMap":"{ConvertToMaus}",
+            "(rawData)":{
+                "{MausParser}":"(parsedData)",
+                "{MausFormatter}":"(formattedData)",
+                "{Export}":"(mausData):[berry_timeline], [berry_window]",
+                "{Display}":"(mausData)"
+        }
+}
