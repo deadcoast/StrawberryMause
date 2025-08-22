@@ -1,306 +1,33 @@
-# Master Index File
+# StrawberryMaus Project Index
 
-## Navigation
+## Overview
 
-- Getting Started: [user/Getting-Started.md](./user/Getting-Started.md)
-- Installation & Permissions (macOS): [user/Installation-Permissions.md](./user/Installation-Permissions.md)
-- Recording Your Session: [user/Recording-Guide.md](./user/Recording-Guide.md)
-- Editing on the Timeline: [user/Editing-Guide.md](./user/Editing-Guide.md)
-- Advanced Editing: [user/Advanced-Editing.md](./user/Advanced-Editing.md)
-- Playback and Verification: [user/Playback-Guide.md](./user/Playback-Guide.md)
-- File Format (.maus): [reference/File-Format.md](./reference/File-Format.md)
-- Mauson Linter Checklist: [reference/Mauson-Linter-Checklist.md](./reference/Mauson-Linter-Checklist.md)
-- Data Integrity & Versioning: [reference/Data-Integrity-Versioning.md](./reference/Data-Integrity-Versioning.md)
-- Testing Plan: [reference/Testing-Plan.md](./reference/Testing-Plan.md)
-- Export Schemas: [reference/Export-Schemas.md](./reference/Export-Schemas.md)
-- Plugin API: [reference/Plugin-API.md](./reference/Plugin-API.md)
-- Overlay (BerryWindow): [modules/BerryWindow-Guide.md](./modules/BerryWindow-Guide.md)
-- Timeline (BerryTimeline): [modules/BerryTimeline-Guide.md](./modules/BerryTimeline-Guide.md)
-- Performance Tuning: [support/Performance.md](./support/Performance.md)
-- Performance Playbook: [support/Performance-Playbook.md](./support/Performance-Playbook.md)
-- Permissions UX: [support/Permissions-UX.md](./support/Permissions-UX.md)
-- Security & Privacy: [support/Security-Privacy.md](./support/Security-Privacy.md)
-- Accessibility: [support/Accessibility.md](./support/Accessibility.md)
-- Plugins & Extensions: [support/Plugins.md](./support/Plugins.md)
-- Troubleshooting: [user/Troubleshooting.md](./user/Troubleshooting.md)
-- FAQ: [user/FAQ.md](./user/FAQ.md)
-- Shortcuts: [user/Shortcuts.md](./user/Shortcuts.md)
-- Glossary: [reference/Glossary.md](./reference/Glossary.md)
+Main entry point for the StrawberryMaus documentation system.
 
----
+### Core Files
 
-## document_index
+- [README.md](./README.md) - Project introduction and setup
+- [sys-architecture.md](./sys-architecture.md) - System architecture specification
+- [AI-Collaberation-Guide.md](./AI-Collaberation-Guide.md) - AI collaboration guidelines
 
-[Index](#document_index) | tag: [#Index]
+### Documentation Hub
 
-### Core System
+- [Docs/INDEX.md](./Docs/INDEX.md) - Complete documentation index
 
-[SystemArchitecture](sys-architecture.md) | tag: [#SystemArchitecture]  
-[ImplementationGuide](docs/implementation_guide/implementation_guide.md) | tag: [#ImplementationGuide]
-[ImplementationGuide.json](docs/implementation_guide/implementation_guide.json) | tag: [#ImplementationGuide.json]
-[AIInstructionSet](AI-Collaberation-Guide.md) | tag: [#AIInstructionSet]
+### Quick Navigation
 
-### Data & Flow
+- **User Guide**: [Docs/user/INDEX.md](./Docs/user/INDEX.md)
+- **Architecture**: [Docs/architecture/INDEX.md](./Docs/architecture/INDEX.md)
+- **Reference**: [Docs/reference/INDEX.md](./Docs/reference/INDEX.md)
+- **Support**: [Docs/support/INDEX.md](./Docs/support/INDEX.md)
+- **Modules**: [Docs/modules/INDEX.md](./Docs/modules/INDEX.md)
 
-[DataFlowSpec](sys-architecture.md|#data_flow_spec) |  tag: [#DataFlowSpec]
-[MathGridSystem](sys-architecture.md|#mathematical_grid) | tag: [#MathGridSystem]  
-[TimelineInterface](sys-architecture.md|#timeline_interface) | tag: [#TimelineInterface]
-[TimelineInterface](Docs/implementation_guide/implementation_guide.md|#timeline_interface) | tag: [#TimelineInterface]
+### Exports
 
-### Frontend Modules
+- `sys-architecture` - System architecture specification
+- `AI-Collaberation-Guide` - AI collaboration protocols
+- `Docs/*` - All documentation modules
 
-[../modules/BerryTimeline-Guide.md](../modules/BerryTimeline-Guide.md) | tag:[#BerryTimeline]
-[../modules/BerryWindow-Guide.md](../modules/BerryWindow-Guide.md) | tag: [#BerryWindow]
+### Tags
 
-### Backend Modules
-
-[MathMausModule](/docs/architecture/MathMaus.md) | tag: [#MathMaus]  
-[MausDataMap](docs/architecture/MausDataMap.md) | tag: [#MausDataMap]
-
-### System Specs
-
-[PerformanceSpecs](performance_specs.md) | tag: [#PerformanceSpecs]  
-[PlatformIntegration](platform_integration.md) | tag: [#PlatformIntegration]  
-[VisualDesign](visual_design_spec.md) | tag: [#VisualDesign]
-
-### Development
-
-[Extensions](extension_capabilities.md) | tag: [#Extensions]  
-[VersionControl](version_control.md) | tag: [#VersionControl]  
-[Roadmap](dev_roadmap.md) | tag: [#Roadmap]
-
----
-
-## Primary Documentation
-
-### Root Level
-
-- README: [README.md](./README.md)
-- System Architecture: [sys-architecture.md](./sys-architecture.md)
-- AI Collaboration Guide: [AI-Collaberation-Guide.md](./AI-Collaberation-Guide.md)
-
-### Core Documentation
-
-- Application Index: [Docs/Application-Index.md](./Docs/Application-Index.md)
-- Overview: [Docs/Overview.md](./Docs/Overview.md)
-
----
-
-## Quick Start
-
-- Getting Started: [Docs/user/Getting-Started.md](./Docs/user/Getting-Started.md)
-- Installation & Permissions: [Docs/user/Installation-Permissions.md](./Docs/user/Installation-Permissions.md)
-
----
-
-## User Documentation
-
-### Getting Started
-
-- Getting Started: [Docs/user/Getting-Started.md](./Docs/user/Getting-Started.md) | tag: [#GettingStarted]
-- Installation & Permissions (macOS): [Docs/user/Installation-Permissions.md](./Docs/user/Installation-Permissions.md) | tag: [#Installation]
-
-### Recording & Playback
-
-- Recording Guide: [Docs/user/Recording-Guide.md](./Docs/user/Recording-Guide.md) | tag: [#Recording]
-- Editing Guide: [Docs/user/Editing-Guide.md](./Docs/user/Editing-Guide.md) | tag: [#Editing]
-- Advanced Editing: [Docs/user/Advanced-Editing.md](./Docs/user/Advanced-Editing.md) | tag: [#AdvancedEditing]
-- Playback Guide: [Docs/user/Playback-Guide.md](./Docs/user/Playback-Guide.md) | tag: [#Playback]
-
-### User Support
-
-- Shortcuts: [Docs/user/Shortcuts.md](./Docs/user/Shortcuts.md) | tag: [#Shortcuts]
-- Troubleshooting: [Docs/user/Troubleshooting.md](./Docs/user/Troubleshooting.md) | tag: [#Troubleshooting]
-- FAQ: [Docs/user/FAQ.md](./Docs/user/FAQ.md) | tag: [#FAQ]
-
----
-
-## Reference Documentation
-
-- File Format (.maus): [Docs/reference/File-Format.md](./Docs/reference/File-Format.md) | tag: [#FileFormat]
-- Mauson Linter Checklist: [Docs/reference/Mauson-Linter-Checklist.md](./Docs/reference/Mauson-Linter-Checklist.md) | tag: [#Linter]
-- Data Integrity & Versioning: [Docs/reference/Data-Integrity-Versioning.md](./Docs/reference/Data-Integrity-Versioning.md) | tag: [#DataIntegrity]
-- Testing Plan: [Docs/reference/Testing-Plan.md](./Docs/reference/Testing-Plan.md) | tag: [#Testing]
-- Export Schemas: [Docs/reference/Export-Schemas.md](./Docs/reference/Export-Schemas.md) | tag: [#ExportSchemas]
-- Plugin API: [Docs/reference/Plugin-API.md](./Docs/reference/Plugin-API.md) | tag: [#PluginAPI]
-- Glossary: [Docs/reference/Glossary.md](./Docs/reference/Glossary.md) | tag: [#Glossary]
-
----
-
-## Module Guides
-
-- BerryWindow Guide: [Docs/modules/BerryWindow-Guide.md](./Docs/modules/BerryWindow-Guide.md) | tag: [#BerryWindow]
-- BerryTimeline Guide: [Docs/modules/BerryTimeline-Guide.md](./Docs/modules/BerryTimeline-Guide.md) | tag: [#BerryTimeline]
-
----
-
-## Architecture Documentation
-
-### Components
-
-- BerryTimeline: [Docs/architecture/BerryTimeline.md](./Docs/architecture/BerryTimeline.md) | tag: [#BerryTimeline]
-- BerryWindow: [Docs/architecture/BerryWindow.md](./Docs/architecture/BerryWindow.md) | tag: [#BerryWindow]
-- MathMaus: [Docs/architecture/MathMaus.md](./Docs/architecture/MathMaus.md) | tag: [#MathMaus]
-- MausDataMap: [Docs/architecture/MausDataMap.md](./Docs/architecture/MausDataMap.md) | tag: [#MausDataMap]
-
----
-
-## Support Documentation
-
-- Performance: [Docs/support/Performance.md](./Docs/support/Performance.md) | tag: [#Performance]
-- Performance Playbook: [Docs/support/Performance-Playbook.md](./Docs/support/Performance-Playbook.md) | tag: [#PerformancePlaybook]
-- Permissions UX: [Docs/support/Permissions-UX.md](./Docs/support/Permissions-UX.md) | tag: [#PermissionsUX]
-- Security & Privacy: [Docs/support/Security-Privacy.md](./Docs/support/Security-Privacy.md) | tag: [#Security]
-- Accessibility: [Docs/support/Accessibility.md](./Docs/support/Accessibility.md) | tag: [#Accessibility]
-- Plugins & Extensions: [Docs/support/Plugins.md](./Docs/support/Plugins.md) | tag: [#Plugins]
-
----
-
-## Additional Documentation
-
-### Root Docs Folder
-
-- Overview: [Docs/Overview.md](./Docs/Overview.md)
-- Performance: [Docs/Performance.md](./Docs/Performance.md)
-- Plugins: [Docs/Plugins.md](./Docs/Plugins.md)
-- Security & Privacy: [Docs/Security-Privacy.md](./Docs/Security-Privacy.md)
-- Shortcuts: [Docs/Shortcuts.md](./Docs/Shortcuts.md)
-- Troubleshooting: [Docs/Troubleshooting.md](./Docs/Troubleshooting.md)
-- FAQ: [Docs/FAQ.md](./Docs/FAQ.md)
-- Glossary: [Docs/Glossary.md](./Docs/Glossary.md)
-
-### JSON Documentation
-
-- Implementation Guide (JSON): [Docs/json/implementation_guide.json](./Docs/json/implementation_guide.json)
-- Implementation Guide (MD): [Docs/json/implementation_guide.md](./Docs/json/implementation_guide.md)
-
----
-
-## Module Architecture
-
-### Frontend Components
-
-#### StrawberryMaus
-
-- Module: `[strawberry_maus]`
-- Tag: [#StrawberryMaus]
-- References:
-  - Architecture: [sys-architecture.md#strawberry_maus](./sys-architecture.md#strawberry_maus)
-
-#### BerryWindow
-
-- Module: `[berry_window]`
-- Tag: [#BerryWindow]
-- References:
-  - User Guide: [Docs/modules/BerryWindow-Guide.md](./Docs/modules/BerryWindow-Guide.md)
-  - Architecture: [Docs/architecture/BerryWindow.md](./Docs/architecture/BerryWindow.md)
-  - System Spec: [sys-architecture.md#berry_window](./sys-architecture.md#berry_window)
-
-#### BerryTimeline
-
-- Module: `[berry_timeline]`
-- Tag: [#BerryTimeline]
-- References:
-  - User Guide: [Docs/modules/BerryTimeline-Guide.md](./Docs/modules/BerryTimeline-Guide.md)
-  - Architecture: [Docs/architecture/BerryTimeline.md](./Docs/architecture/BerryTimeline.md)
-  - System Spec: [sys-architecture.md#timeline_interface](./sys-architecture.md#timeline_interface)
-
-### Backend Components
-
-#### MathMaus
-
-- Module: `[math_maus]`
-- Tag: [#MathMaus]
-- References:
-  - Architecture: [Docs/architecture/MathMaus.md](./Docs/architecture/MathMaus.md)
-  - System Spec: [sys-architecture.md#math_maus](./sys-architecture.md#math_maus)
-
-#### MausDataMap
-
-- Module: `[maus_data_map]`
-- Tag: [#MausDataMap]
-- References:
-  - Architecture: [Docs/architecture/MausDataMap.md](./Docs/architecture/MausDataMap.md)
-  - File Format: [Docs/reference/File-Format.md](./Docs/reference/File-Format.md)
-  - System Spec: [sys-architecture.md#maus_data_map](./sys-architecture.md#maus_data_map)
-
----
-
-## Cross-Reference Matrix
-
-### By Feature
-
-| Feature | Module | Primary Doc | Architecture Ref |
-|---------|--------|-------------|------------------|
-| Recording | `[berry_window]` | [Recording-Guide.md](./Docs/user/Recording-Guide.md) | [BerryWindow.md](./Docs/architecture/BerryWindow.md) |
-| Timeline | `[berry_timeline]` | [BerryTimeline-Guide.md](./Docs/modules/BerryTimeline-Guide.md) | [BerryTimeline.md](./Docs/architecture/BerryTimeline.md) |
-| Data Processing | `[math_maus]` | [MathMaus.md](./Docs/architecture/MathMaus.md) | [sys-architecture.md#backend_spec](./sys-architecture.md#backend_spec) |
-| File Management | `[maus_data_map]` | [File-Format.md](./Docs/reference/File-Format.md) | [MausDataMap.md](./Docs/architecture/MausDataMap.md) |
-
-### By Tag Category
-
-| Category | Tags | Usage |
-|----------|------|-------|
-| Core System | `#SystemArchitecture`, `#CoreArchitecture`, `#Implementation` | System-level documentation |
-| Frontend | `#BerryWindow`, `#BerryTimeline`, `#StrawberryMaus` | UI components |
-| Backend | `#MathMaus`, `#MausDataMap` | Data processing |
-| User Docs | `#GettingStarted`, `#Recording`, `#Editing`, `#Playback` | User guides |
-| Reference | `#FileFormat`, `#Testing`, `#PluginAPI` | Technical reference |
-| Support | `#Performance`, `#Security`, `#Accessibility` | Support documentation |
-
----
-
-## Recommended Reading Paths
-
-### For Users
-
-1. [Getting Started](./Docs/user/Getting-Started.md)
-2. [Installation & Permissions](./Docs/user/Installation-Permissions.md)
-3. [Recording Guide](./Docs/user/Recording-Guide.md) → [Editing Guide](./Docs/user/Editing-Guide.md) → [Playback Guide](./Docs/user/Playback-Guide.md)
-4. [Shortcuts](./Docs/user/Shortcuts.md)
-5. [FAQ](./Docs/user/FAQ.md)
-
-### For Developers
-
-1. [Overview](./Docs/Overview.md)
-2. [System Architecture](./sys-architecture.md)
-3. [AI Collaboration Guide](./AI-Collaberation-Guide.md)
-4. [File Format](./Docs/reference/File-Format.md)
-5. [Plugin API](./Docs/reference/Plugin-API.md)
-6. [Testing Plan](./Docs/reference/Testing-Plan.md)
-
-### For AI Collaboration
-
-1. [AI Collaboration Guide](./AI-Collaberation-Guide.md)
-2. [Implementation Guide (MD)](./Docs/json/implementation_guide.md)
-3. [Mauson Linter Checklist](./Docs/reference/Mauson-Linter-Checklist.md)
-4. [Data Integrity & Versioning](./Docs/reference/Data-Integrity-Versioning.md)
-
----
-
-## System Requirements
-
-### Platform Support
-
-- **Primary**: macOS 11+ (Universal Binary recommended)
-- **Permissions**: Accessibility, Screen Recording
-- **Performance Targets**:
-  - Capture rate: 120Hz minimum
-  - Latency: <10ms (capture → display)
-  - Memory: 4GB minimum, 8GB recommended
-
-### Conventions
-
-- **Files**: `snake_case` for filenames, `.maus` for data exports
-- **Functions**: `PascalCase` in specs
-- **Data**: `camelCase` in internal structures
-- **Tags**: `#PascalCase` for categorization
-- **Modules**: `[snake_case]` for reference
-
----
-
-## Version Information
-
-- Current Version: See [PerformanceSpecrol](sys-architect.md/#performance_specrol)
-- Last Updated: See document metadata
-- Roadmap: [dev_roadmap](sys-architecture.md/#performance_specs)
+[#Root] [#ProjectIndex] [#StrawberryMaus]
