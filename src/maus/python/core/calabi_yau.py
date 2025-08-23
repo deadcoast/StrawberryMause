@@ -14,7 +14,8 @@ class CalabiYauManifold:
 
     def __init__(self, dimensions: int) -> None:
         self.manifold = Manifold(
-            dimensions=dimensions, points=np.zeros(dimensions, dtype=np.float64))
+            dimensions=dimensions, points=np.zeros(dimensions, dtype=np.float64)
+        )
         self.wormholes: list[Wormhole] = []
 
     def install_wormhole(self, wormhole: Wormhole) -> None:

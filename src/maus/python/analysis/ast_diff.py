@@ -28,7 +28,10 @@ def hash_content(content: str) -> str:
     return hashlib.sha256(content.encode("utf-8")).hexdigest()
 
 
-def compute_delta(old_nodes: Iterable[ASTNode], new_nodes: Iterable[ASTNode]) -> ASTDelta:
+def compute_delta(
+    old_nodes: Iterable[ASTNode],
+    new_nodes: Iterable[ASTNode],
+) -> ASTDelta:
     old_by_id = {n.id: n for n in old_nodes}
     new_by_id = {n.id: n for n in new_nodes}
 
@@ -54,5 +57,3 @@ def compute_delta(old_nodes: Iterable[ASTNode], new_nodes: Iterable[ASTNode]) ->
 def prioritize_insertions(delta: ASTDelta) -> list[ASTNode]:
     # Simple strategy: sort by path length (shallower first) then by weight desc
     return sorted(delta.added, key=lambda n: (n.path.count("/"), -n.weight))
-
-

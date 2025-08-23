@@ -99,14 +99,15 @@ class Wormhole:
 
     def __hash__(self) -> int:
         return hash(
-            (self.entrance,
-            self.exit,
-            self.throat_radius,
-            self.traversable,
-            self.stability,
-            self.exotic_matter,
+            (
+                self.entrance,
+                self.exit,
+                self.throat_radius,
+                self.traversable,
+                self.stability,
+                self.exotic_matter,
+            )
         )
-    )
 
     def __bool__(self) -> bool:
         return self.traversable

@@ -16,7 +16,9 @@ def main() -> int:
 
     sys.path.insert(0, str(src_path))
     try:
-        from maus_doc.bayesian_extractor import BayesianRuleExtractor  # type: ignore
+        from src.maus.python.core.bayesian_extractor import (
+            BayesianRuleExtractor,  # type: ignore
+        )
     except Exception as exc:  # pragma: no cover
         print(f"Failed to import BayesianRuleExtractor: {exc}")
         return 1
@@ -32,5 +34,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
-

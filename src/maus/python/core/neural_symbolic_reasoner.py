@@ -4,7 +4,7 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 
-from .bayesian_extractor import BayesianRuleExtractor
+from ..analysis.bayesian_extractor import BayesianRuleExtractor
 from .semantic_config import SemanticConfigAnalyzer
 
 
@@ -112,12 +112,10 @@ class NeuralSymbolicReasoner:
         self.bayesian = BayesianRuleExtractor()
         self.semantic = SemanticConfigAnalyzer()
         # Attempt to load pre-trained model; otherwise lazy-train on Docs/
-        repo_root = Path(__file__).resolve().parents[2]
-        self._model_path = (
-            repo_root / 'build' / 'models' / 'bayes_tags.json'
-        )
+        repo_root = Path(__file__).resolve().parents[3]
+        self._model_path = repo_root / "build" / "models" / "bayes_tags.json"
         if not self.bayesian.load_model(self._model_path):
-            self._docs_root = repo_root / 'Docs'
+            self._docs_root = repo_root / "Docs"
         else:
             self._docs_root = None
 
@@ -135,17 +133,22 @@ class NeuralSymbolicReasoner:
         logical_constraints = self.symbolic_kb.extract_constraints(query)
 
         # Semantic config constraints (if provided)
-        if getattr(context, 'config_text', None):
+        if getattr(context, "config_text", None):
             sdoc = self.semantic.analyze_text(context.config_text or "")
-            logical_constraints = list({
-                *logical_constraints,
-                *self.semantic.infer_constraints(sdoc),
-            })
+            logical_constraints = list(
+                {
+                    *logical_constraints,
+                    *self.semantic.infer_constraints(sdoc),
+                }
+            )
 
         # Bayesian evidence from docs tags
         distribution = self.bayesian.predict_distribution(query)
         if distribution:
-            top_labels = [lbl for lbl, _ in sorted(distribution.items(), key=lambda x: x[1], reverse=True)[:3]]
+            top_sorted = sorted(distribution.items(), key=lambda x: x[1], reverse=True)[
+                :3
+            ]
+            top_labels = [lbl for lbl, _ in top_sorted]
             bayes_constraints = [f"#{lbl}" for lbl in top_labels]
             logical_constraints = list({*logical_constraints, *bayes_constraints})
 
@@ -170,7 +173,7 @@ class NeuralSymbolicReasoner:
 
     def _ensure_bayes_trained(self) -> None:
         """Train Bayes model from Docs/ if not already loaded."""
-        if getattr(self, '_docs_root', None):
+        if getattr(self, "_docs_root", None):
             try:
                 self.bayesian.train_from_docs(str(self._docs_root))
                 self._model_path.parent.mkdir(parents=True, exist_ok=True)
@@ -209,7 +212,9 @@ class NeuralSymbolicReasoner:
         """
         return f"Ideal document for {intent.explicit_goal}"
 
-    def synthesize_path(self, embeddings: list[float], logical_constraints: list[str]) -> list[str]:
+    def synthesize_path(
+        self, embeddings: list[float], logical_constraints: list[str]
+    ) -> list[str]:
         """
         Synthesizes an optimal path through documentation
 

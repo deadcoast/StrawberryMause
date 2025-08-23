@@ -4,10 +4,10 @@ maus_manifest:
   token_weight: 3512
   dependencies:
     critical:
-      - ../modules/BerryWindow.md
-      - ../modules/BerryTimeline.md
+      - ../Docs/modules/BerryWindow.md
+      - ../Docs/modules/BerryTimeline.md
     optional:
-      - ../support/Performance.md
+      - ../Docs/support/Performance.md
   exports:
     primary:
       - GettingStarted

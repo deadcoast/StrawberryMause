@@ -10,6 +10,23 @@ Recording captures mouse events (click, drag, release) with precise timestamps a
 - Overlay toggle and opacity slider
 - Click-through toggle (edit mode vs record mode)
 
+## CLI Capture (Developers)
+
+You can capture events from the command line using the capture pipeline. Choose
+between auto, stub, or real CGEventTap:
+
+```bash
+PYTHONPATH=src python3 scripts/capture_pipeline.py --capture auto --out out.maus.json --verbose
+```
+
+Modes:
+
+- `auto`: Use real capture if permissions are granted; otherwise fallback to stub.
+- `real`: Require CGEventTap; errors if missing permissions.
+- `stub`: Generate synthetic events to test the pipeline.
+
+See Permissions steps in [Permissions-UX](../support/Permissions-UX.md).
+
 ## Best Practices
 
 - Ensure permissions are granted (see [Installation-Permissions.md](./Installation-Permissions.md)).

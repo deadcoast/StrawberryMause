@@ -17,7 +17,7 @@ def _load_nodes(data: dict) -> list[dict[str, Any]]:
     return []
 
 
-def _to_ast_nodes(nodes_raw: list[dict[str, Any]]):
+def _to_ast_nodes(nodes_raw: list[dict[str, Any]]) -> list[Any]:
     from maus_doc.ast_diff import ASTNode, hash_content
 
     ast_nodes: list[ASTNode] = []

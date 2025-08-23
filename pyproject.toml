@@ -1,30 +1,52 @@
+[project]
+name = "maus"
+version = "0.0.1"
+description = "A Python project"  # Add your actual description
+requires-python = ">=3.11"
+dependencies = []  # Add your dependencies here
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}  # Optional but recommended
+]
+
+[project.optional-dependencies]
+dev = ["black", "ruff", "pytest", "pyright"]  # Optional: development dependencies
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
 [tool.black]
 line-length = 88
 target-version = ['py311']
 include = '\\.pyi?$'
 
 [tool.ruff]
-target-version = 'py311'
+target-version = "py311"
 line-length = 88
 fix = true
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    ".venv",
+]
+
+[tool.ruff.lint]
 select = [
-  "E",  # pycodestyle errors
-  "F",  # pyflakes
-  "I",  # isort
-  "UP", # pyupgrade
-  "B",  # flake8-bugbear
-  "ANN" # annotations
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "I",   # isort
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "ANN"  # annotations
 ]
 ignore = [
-  "ANN101", # ignore missing type annotations for self
-  "ANN102"  # ignore missing type annotations for cls
-]
-exclude = [
-  ".git",
-  "__pycache__",
-  "build",
-  "dist",
-  ".venv",
+    "ANN101",  # ignore missing type annotations for self
+    "ANN102"   # ignore missing type annotations for cls
 ]
 
 [tool.ruff.format]
@@ -36,8 +58,11 @@ line-ending = "lf"
 profile = "black"
 line_length = 88
 
-[tool.pyright]
-pythonVersion = "3.11"
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+]
+addopts = "-q"
 
 [build-system]
 requires = ["setuptools>=61.0"]

@@ -1,4 +1,3 @@
-
 from __future__ import annotations
 
 
@@ -52,14 +51,14 @@ class ConsciousnessFusionInterface:
         _bridge = await self.neural_bridge.connect(
             user_consciousness,
             ai_consciousness,
-            protocol='quantum_entanglement',
+            protocol="quantum_entanglement",
         )
 
         # Synchronize brainwaves
         _synchronized = await self.consciousness_mixer.synchronize_frequencies(
             user_consciousness,
             ai_consciousness,
-            target_frequency='gamma_hypersync',  # 400Hz+
+            target_frequency="gamma_hypersync",  # 400Hz+
         )
 
         # Merge thought streams

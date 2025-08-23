@@ -17,6 +17,18 @@
 3. Screen Recording → enable StrawberryMaus.
 4. Quit and relaunch the app if prompted.
 
+### Developer CLI Prompt
+
+Running the capture CLI with `--capture real` will prompt Accessibility if not
+already granted:
+
+```bash
+PYTHONPATH=src python3 scripts/capture_pipeline.py --capture real --verbose
+```
+
+If permissions are not granted, the CLI will log a fallback hint. For more
+details see [Permissions-UX](../support/Permissions-UX.md).
+
 ## Resetting Permissions (if stuck)
 
 - Remove StrawberryMaus from Accessibility and Screen Recording lists, then re-add by relaunching.

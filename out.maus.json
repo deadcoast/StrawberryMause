@@ -1,0 +1,59 @@
+{
+  "header": {
+    "version": "1.0",
+    "created": "1755932313735",
+    "duration": 0,
+    "resolution": [
+      1920,
+      1080
+    ]
+  },
+  "events": [
+    {
+      "id": "ac59c8cf-1ce0-41e3-982f-f8f6b2a082c1",
+      "time": 0,
+      "grid": {
+        "x": 5.0,
+        "y": 18.0
+      },
+      "action": {
+        "type": "click",
+        "button": "left",
+        "modifiers": []
+      }
+    },
+    {
+      "id": "3f8070ce-d1b4-4167-9237-8d5061cae6f5",
+      "time": 50,
+      "grid": {
+        "x": 15.0,
+        "y": 37.0
+      },
+      "action": {
+        "type": "drag",
+        "button": "left",
+        "modifiers": [
+          "shift"
+        ]
+      }
+    },
+    {
+      "id": "c6c7e477-5b69-4601-a4e6-8c7a4e1d751c",
+      "time": 100,
+      "grid": {
+        "x": 26.0,
+        "y": 55.0
+      },
+      "action": {
+        "type": "release",
+        "button": "left",
+        "modifiers": []
+      }
+    }
+  ],
+  "metadata": {
+    "tags": [],
+    "description": "",
+    "author": "system_user"
+  }
+}

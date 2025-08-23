@@ -2,6 +2,7 @@ class QuantumProcessor:
     """
     Quantum processor
     """
+
     def __init__(self, qubits: int) -> None:
         self.qubits = qubits
 
@@ -17,7 +18,9 @@ class QuantumProcessor:
         """
         return superposition
 
-    def grovers_algorithm(self, superposition: str, oracle: str, iterations: int) -> str:
+    def grovers_algorithm(
+        self, superposition: str, oracle: str, iterations: int
+    ) -> str:
         """
         Grovers algorithm for amplitude amplification
         """
@@ -41,20 +44,30 @@ class QuantumBit:
         """
         self.value = other.value
 
+
 class SearchResults:
     """
     Search results
     """
-    def __init__(self, primary_timeline: str, alternate_timelines: list[str], quantum_confidence: float, heisenberg_uncertainty: float) -> None:
+
+    def __init__(
+        self,
+        primary_timeline: str,
+        alternate_timelines: list[str],
+        quantum_confidence: float,
+        heisenberg_uncertainty: float,
+    ) -> None:
         self.primary_timeline = primary_timeline
         self.alternate_timelines = alternate_timelines
-        self.quantum_confidence = 0.0
-        self.heisenberg_uncertainty = 0.0
+        self.quantum_confidence = quantum_confidence
+        self.heisenberg_uncertainty = heisenberg_uncertainty
+
 
 class Search:
     """
     Search
     """
+
     def __init__(self, id: str, search_paths: list[str]) -> None:
         self.id = id
         self.search_paths = search_paths
@@ -74,13 +87,16 @@ class Query:
     """
     Query
     """
+
     def __init__(self, query: str) -> None:
         self.query = query
+
 
 class Oracle:
     """
     Oracle
     """
+
     def __init__(self, oracle: str, query: Query) -> None:
         self.oracle = oracle
         self.query = query
@@ -91,10 +107,12 @@ class Oracle:
         """
         return self.oracle
 
+
 class DocumentationGraph:
     """
     Documentation graph
     """
+
     def __init__(self, graph: dict[str, str], query: Query) -> None:
         self.graph = graph
         self.query = query
@@ -103,13 +121,24 @@ class DocumentationGraph:
         """
         Generate all search paths for a query
         """
-        return []
+        # Minimal: keys matching query substring, else all keys
+        keys = [k for k in self.graph.keys() if query.query in k] or list(
+            self.graph.keys()
+        )
+        return keys
+
 
 class QuantumEntangledSearch:
     """
     Quantum entangled search
     """
-    def __init__(self, quantum_computer: QuantumProcessor, entangled_pairs: dict[str, QuantumBit], documentation_graph: DocumentationGraph) -> None:
+
+    def __init__(
+        self,
+        quantum_computer: QuantumProcessor,
+        entangled_pairs: dict[str, QuantumBit],
+        documentation_graph: DocumentationGraph,
+    ) -> None:
         self.quantum_computer = quantum_computer
         self.entangled_pairs = entangled_pairs
         self.documentation_graph = documentation_graph
@@ -119,16 +148,24 @@ class QuantumEntangledSearch:
         Quantum search for a query in the documentation graph
         """
         # Create superposition of all possible search paths
-        superposition = self.quantum_computer.create_superposition(self.documentation_graph.generate_all_search_paths(query))
+        superposition = self.quantum_computer.create_superposition(
+            self.documentation_graph.generate_all_search_paths(query)
+        )
 
         # Quantum walk through documentation graph
-        quantum_walk = self.quantum_computer.quantum_walk(superposition, 1000, str(self.documentation_graph.graph)) # TODO: Implement topology
+        quantum_walk = self.quantum_computer.quantum_walk(
+            superposition,
+            1000,
+            str(self.documentation_graph.graph),
+        )  # TODO: Implement topology
 
         # Grovers algorithm for amplitude amplification
-        amplified = self.quantum_computer.grovers_algorithm(quantum_walk, self.documentation_graph.query.query, 1000) # TODO: Implement oracle
+        amplified = self.quantum_computer.grovers_algorithm(
+            quantum_walk, self.documentation_graph.query.query, 1000
+        )  # TODO: Implement oracle
 
         # Measure the superposition
-        collapsed = self.quantum_computer.measure(amplified)
+        _collapsed = self.quantum_computer.measure(amplified)
 
         return SearchResults(
             primary_timeline="",
@@ -137,29 +174,34 @@ class QuantumEntangledSearch:
             heisenberg_uncertainty=0.0,
         )
 
-    def create_quantum_entanglement(self, search1: Search, search2: Search) -> "QuantumEntangledSearch":
+    def create_quantum_entanglement(
+        self, search1: Search, search2: Search
+    ) -> "QuantumEntangledSearch":
         """
         Create quantum entanglement
         """
         return self
 
-    def create_search_entanglement(self, search1: Search, search2: Search) -> "QuantumEntangledSearch":
+    def create_search_entanglement(
+        self, search1: Search, search2: Search
+    ) -> "QuantumEntangledSearch":
         """
         Create search entanglement
         """
         return self
 
-    def create_documentation_entanglement(self, search1: Search, search2: Search) -> "QuantumEntangledSearch":
+    def create_documentation_entanglement(
+        self, search1: Search, search2: Search
+    ) -> "QuantumEntangledSearch":
         """
         Create documentation entanglement
         """
         return self
 
-    def create_oracle_entanglement(self, search1: Search, search2: Search) -> "QuantumEntangledSearch":
+    def create_oracle_entanglement(
+        self, search1: Search, search2: Search
+    ) -> "QuantumEntangledSearch":
         """
         Create oracle entanglement
         """
         return self
-
-
-

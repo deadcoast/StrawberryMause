@@ -2,7 +2,6 @@
 
 - [ ] Fix remaining bad anchor syntax (|# → #) across repo
 - [ ] Normalize path casing to `Docs/`
-- [ ] Replace `../modules/` with `Docs/modules/`
 - [ ] Add annotated mauson examples (valid/invalid)
 - [ ] Add screenshots placeholders for Permissions UX
 - [ ] Add debug HUD spec and thresholds JSON
@@ -10,6 +9,19 @@
 - [ ] Map tests to acceptance criteria per module
 - [ ] Add WCAG color contrast targets
 - [ ] Define conflict resolution precedence and time-scale math
-
-- [x] Add Bayesian extractor component and integrate with reasoning
+- [ ] Add Bayesian extractor component and integrate with reasoning
 - [ ] Precompute Bayes model cache from Docs/ on build and commit artifact
+- [ ] Add Makefile targets (lint, test, capture, validate).
+- [ ] Add examples folder with sample .maus and CLI commands in a README.
+- [ ] Update (.Docs/) Application-Index and user Getting-Started to include CLI capture modes and validation/playback commands.
+- [ ] Extend EventPipeline tests for more edge cases (corners, out-of-bounds clamp behavior if added later).
+- [ ] Add docs for new CLIs to Application-Index and a quick “examples/” folder with a canonical .maus and one-liners to run capture/validate/playback.
+
+## Tests
+
+- [ ] EventPipeline: multiple buttons/modifier combinations, boundary coordinates, timing scale variations.
+- [ ] Playback stub: verify ordering and timing spacing logic with a fake time source.
+- [ ] Real capture path: gated test that asserts fallback when Quartz not present, and a separate manual test plan for CGEventTap.
+- [ ] Add tests for CLI capture modes and validation/playback commands.
+- [ ] Expand tests for real-world edge cases in EventPipeline (grid bounds, modifier combos, time-scaling).
+- [ ] Add a small “examples/” with a canonical .maus and CLI commands in a README so contributors can try end-to-end quickly.

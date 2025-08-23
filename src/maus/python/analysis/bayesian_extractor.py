@@ -87,7 +87,9 @@ class BayesianRuleExtractor:
             self.total_docs += 1
 
     def predict_distribution(
-        self, text: str, file_type: str = "text",
+        self,
+        text: str,
+        file_type: str = "text",
     ) -> dict[str, float]:
         """
         Return P(label | evidence) distribution using multinomial Naive Bayes.
@@ -122,9 +124,7 @@ class BayesianRuleExtractor:
 
         # Normalize to probabilities via log-sum-exp
         max_log = max(log_posteriors.values()) if log_posteriors else 0.0
-        exp_vals = {
-            k: math.exp(v - max_log) for k, v in log_posteriors.items()
-        }
+        exp_vals = {k: math.exp(v - max_log) for k, v in log_posteriors.items()}
         z = sum(exp_vals.values()) or 1.0
         return {k: v / z for k, v in exp_vals.items()}
 
@@ -146,7 +146,9 @@ class BayesianRuleExtractor:
             return False
         data = json.loads(p.read_text(encoding="utf-8"))
         self.alpha = float(data.get("alpha", 1.0))
-        self.label_to_count = {str(k): int(v) for k, v in data.get("label_to_count", {}).items()}
+        self.label_to_count = {
+            str(k): int(v) for k, v in data.get("label_to_count", {}).items()
+        }
         self.label_feature_counts = {
             str(lbl): {str(f): int(c) for f, c in feats.items()}
             for lbl, feats in data.get("label_feature_counts", {}).items()
@@ -181,5 +183,3 @@ class BayesianRuleExtractor:
             return path.read_text(encoding="utf-8", errors="ignore")
         except Exception:
             return ""
-
-

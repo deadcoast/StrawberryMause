@@ -86,7 +86,7 @@ class SemanticConfigAnalyzer:
             return "ini"
         return "yaml"  # permissive default
 
-    def _parse(self, text: str, file_type: str) -> Any:
+    def _parse(self, text: str, file_type: str) -> object:
         try:
             if file_type == "json":
                 return json.loads(text)
@@ -104,7 +104,7 @@ class SemanticConfigAnalyzer:
             return {}
         return {}
 
-    def _walk(self, value: Any, out: list[SemanticNode], path: str) -> None:
+    def _walk(self, value: object, out: list[SemanticNode], path: str) -> None:
         if isinstance(value, dict):
             for k, v in value.items():
                 self._walk(v, out, f"{path}.{k}")
@@ -156,5 +156,3 @@ class SemanticConfigAnalyzer:
 
     def _looks_like_ini(self, text: str) -> bool:
         return bool(re.search(r"^\[[^\]]+\]$", text, flags=re.MULTILINE))
-
-

@@ -3,11 +3,11 @@
 from dataclasses import dataclass
 from typing import TextIO
 
-from .neural_symbolic_reasoner import Document as NeuralSymbolicDocument
+from src.maus.python.core.neural_symbolic_reasoner import NeuralSymbolicReasoner
 
 
 @dataclass
-class Document(NeuralSymbolicDocument):
+class Document(NeuralSymbolicReasoner):
     pass
 
 

@@ -1,7 +1,7 @@
 import numpy as np
 
-from .calabi_yau import CalabiYauManifold
-from .manifold import Manifold, Position, Target, Wormhole
+from src.maus.python.core.calabi_yau import CalabiYauManifold
+from src.maus.python.core.manifold import Manifold, Position, Target, Wormhole
 
 
 class Document:

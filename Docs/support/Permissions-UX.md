@@ -1,33 +1,39 @@
-# Permissions UX
+# Permissions UX (macOS)
 
-## Goals
+## Accessibility & Screen Recording
 
-Guide users through Accessibility and Screen Recording permissions with clear states and recovery steps.
+StrawberryMaus requires macOS Accessibility (for CGEventTap) and may benefit from
+Screen Recording for overlay alignment.
 
-## States
+### Steps
 
-- Not requested: show rationale and Request button
-- Requested (pending): waiting for System Settings toggle
-- Granted: proceed to recording
-- Denied: offer retry and manual steps
+1. Open System Settings → Privacy & Security.
+2. Accessibility → enable StrawberryMaus (the app or your Python interpreter running capture).
+3. Screen Recording → enable StrawberryMaus if using overlay alignment.
+4. If prompted by the app, accept permissions and relaunch.
 
-## Flow
+### First Run Prompt
 
-1. Check permissions on launch
-2. If missing, show inline guide with deep links to System Settings
-3. Detect changes; prompt relaunch if necessary
+- The capture pipeline uses `AXIsProcessTrustedWithOptions` to prompt if not trusted.
+- If you miss the prompt, revisit System Settings → Privacy & Security.
 
-## Copy Guidelines
+### Troubleshooting
 
-- Be explicit: why needed, what is captured, and privacy stance
-- Provide manual path: System Settings → Privacy & Security → Accessibility / Screen Recording
+- If the app doesn’t appear in the lists, run the capture CLI once with `--capture real`:
 
-## Error Recovery
+```bash
+PYTHONPATH=src python3 scripts/capture_pipeline.py --capture real --verbose
+```
 
-- If app not listed: relaunch to re-register
-- If toggles ignored: instruct to remove and re-add the app
+- If events don’t appear, fallback with `--capture stub` and verify JSON output.
 
-## Related
+## CLI Capture Modes
 
-- Installation: [../user/Installation-Permissions.md](../user/Installation-Permissions.md)
-- Security posture: [./Security-Privacy.md](./Security-Privacy.md)
+- `auto`: use real capture if trusted; otherwise stub.
+- `real`: require CGEventTap; error if unavailable.
+- `stub`: generate synthetic events for testing.
+
+## Security Notes
+
+- StrawberryMaus does not transmit data over the network by default.
+- All captured events are processed locally; review `.maus` JSON before sharing.

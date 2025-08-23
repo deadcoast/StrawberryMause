@@ -501,13 +501,13 @@ tag: [#BayesianExtractor] [#Bayes]
 
 tag: [#SemanticConfig]
 
-### Overview
+### SemanticConfig Overview
 
 - Parses JSON/YAML/TOML/INI into a `SemanticDocument` of nodes.
 - Infers high-level tags (e.g., `#BerryWindow`, `#BerryTimeline`, `#MausDataMap`,
   `#Performance`, `#Permissions`) from key presence to guide reasoning.
 
-### Interfaces
+### SemanticConfig Interfaces
 
 ```json
 {
@@ -518,7 +518,7 @@ tag: [#SemanticConfig]
 }
 ```
 
-### Integration Points
+### SemanticConfig Integration Points
 
 - Consumed by `[neural_symbolic_reasoner]` when `Context.config_text` is provided.
 - Augments `logical_constraints` alongside Bayesian predictions and symbolic KB.
@@ -529,12 +529,12 @@ tag: [#SemanticConfig]
 
 tag: [#AST]
 
-### Overview
+### Config Overview
 
 - Computes deltas between two AST snapshots to drive targeted edits and preserve
   structure/comments.
 
-### Interfaces
+### ASTInterfaces
 
 ```json
 {
@@ -546,7 +546,7 @@ tag: [#AST]
 }
 ```
 
-### AST Integration Points
+### ASTIntegrationPoints
 
 - Used by tooling to determine safe insertion points and minimal edits for
   documentation and code scaffolds.
