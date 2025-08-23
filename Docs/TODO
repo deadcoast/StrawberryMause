@@ -10,3 +10,6 @@
 - [ ] Map tests to acceptance criteria per module
 - [ ] Add WCAG color contrast targets
 - [ ] Define conflict resolution precedence and time-scale math
+
+- [x] Add Bayesian extractor component and integrate with reasoning
+- [ ] Precompute Bayes model cache from Docs/ on build and commit artifact

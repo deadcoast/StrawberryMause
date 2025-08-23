@@ -10,20 +10,24 @@ tag: [#SystemArchitecture]
 
 [CoreArchitecture](#core_architecture) | tag: [#CoreArchitecture]
 [ImplementationGuide](#implementation_guide) | tag: [#ImplementationGuide]
-[DataFlowSpec](#data_flow_spec) | tag: [#DataFlowSpec]  
-[MathGridSystem](#mathematical_grid) | tag: [#MathGridSystem]  
-[TimelineInterface](#timeline_interface) | tag: [#TimelineInterface]  
-[AIInstructionSet](#ai_instruction_set) | tag: [#AIInstructionSet]  
-[BerryWindow](#berry_window) | tag: [#BerryWindow]  
-[MathMausModule](#math_maus) | tag: [#MathMaus]  
-[MauseDataMap](#maus_data_map) | tag: [#MauseDataMap]  
-[BerryTimeline](#berry_timeline) | tag: [#BerryTimeline]  
-[PerformanceSpecs](#performance_specs) | tag: [#PerformanceSpecs]  
-[PlatformIntegration](#platform_integration) | tag: [#PlatformIntegration]  
-[VisualDesign](#visual_design_spec) | tag: [#VisualDesign]  
-[Extensions](#extension_capabilities) | tag: [#Extensions]  
-[VersionControl](#version_control) | tag: [#VersionControl]  
+[DataFlowSpec](#data_flow_spec) | tag: [#DataFlowSpec]
+[MathGridSystem](#mathematical_grid) | tag: [#MathGridSystem]
+[TimelineInterface](#timeline_interface) | tag: [#TimelineInterface]
+[AIInstructionSet](#ai_instruction_set) | tag: [#AIInstructionSet]
+[BerryWindow](#berry_window) | tag: [#BerryWindow]
+[MathMausModule](#math_maus) | tag: [#MathMaus]
+[MauseDataMap](#maus_data_map) | tag: [#MauseDataMap]
+[BerryTimeline](#berry_timeline) | tag: [#BerryTimeline]
+[PerformanceSpecs](#performance_specs) | tag: [#PerformanceSpecs]
+[PlatformIntegration](#platform_integration) | tag: [#PlatformIntegration]
+[VisualDesign](#visual_design_spec) | tag: [#VisualDesign]
+[Extensions](#extension_capabilities) | tag: [#Extensions]
+[VersionControl](#version_control) | tag: [#VersionControl]
 [Roadmap](#dev_roadmap) | tag: [#Roadmap]
+
+[BayesianExtractor](#bayesian_rule_extractor) | tag: [#Bayes]
+[SemanticConfig](#semantic_configuration_analysis) | tag: [#SemanticConfig]
+[ASTDiff](#ast_differential_analysis) | tag: [#AST]
 
 ---
 
@@ -34,9 +38,9 @@ tag: [#CoreArchitecture]
 ### System Components
 
 component_registry:
-  frontend: {[#BerryMaus], [#BerryTimeline], [#BerryWindow]}
-  backend: {[#MathMaus], [#MausDataMap]}
-  data_layer: {[#MausParser], [#GridCalculator], [#EventCapture]}
+frontend: {[#BerryMaus], [#BerryTimeline], [#BerryWindow]}
+backend: {[#MathMaus], [#MausDataMap]}
+data_layer: {[#MausParser], [#GridCalculator], [#EventCapture]}
 
 ### Component Relationships
 
@@ -64,9 +68,9 @@ tag: [#MathGridSystem]
 The mathematical grid operates on a normalized coordinate system that maps screen pixels to timeline positions.
 
 grid_formula:
-  x_norm: (mouseX / screenWidth)
-  y_norm: (mouseY / screenHeight)
-  t_pos: (clickTime - startTime) / totalDuration
+x_norm: (mouseX / screenWidth)
+y_norm: (mouseY / screenHeight)
+t_pos: (clickTime - startTime) / totalDuration
 
 ### Grid Data Structure
 
@@ -102,7 +106,7 @@ tag: [#DataFlowSpec]
     "(mouseEvents)": "{Stream}:[event_buffer]",
     "[event_buffer]": "{Batch}:(eventBatch)"
   },
-  
+
   "{ProcessPhase}": {
     "(eventBatch)": "{Send}:[math_maus]",
     "[math_maus]": {
@@ -111,7 +115,7 @@ tag: [#DataFlowSpec]
       "{Package}": "(processedBatch)"
     }
   },
-  
+
   "{StoragePhase}": {
     "(processedBatch)": "{Route}:[maus_data_map]",
     "[maus_data_map]": {
@@ -120,7 +124,7 @@ tag: [#DataFlowSpec]
       "{Store}": "[.maus_file]"
     }
   },
-  
+
   "{DisplayPhase}": {
     "[.maus_file]": "{Load}:[berry_timeline]",
     "[berry_timeline]": {
@@ -143,10 +147,10 @@ tag: [#FrontendSpec]
 tag: [#BerryWindow]
 
 window_properties:
-  transparency: 0.1-1.0_adjustable
-  overlay_mode: always_on_top
-  capture_mode: passive_monitoring
-  render_mode: minimal_ui
+transparency: 0.1-1.0_adjustable
+overlay_mode: always_on_top
+capture_mode: passive_monitoring
+render_mode: minimal_ui
 
 ```json
 {
@@ -158,7 +162,7 @@ window_properties:
       "bounds": "[0, 0, screen_width, screen_height]"
     }
   },
-  
+
   "{ClickCapture}": {
     "{OnMouseDown}": "(clickEvent)",
     "(clickEvent)": {
@@ -176,22 +180,22 @@ window_properties:
 tag: [#BerryTimeline]
 
 timeline_features:
-  zoom_levels: [1s, 5s, 10s, 30s, 1m, 5m]
-  edit_modes: [insert, delete, move, adjust_timing]
-  playback_speeds: [0.25x, 0.5x, 1x, 2x, 4x]
+zoom_levels: [1s, 5s, 10s, 30s, 1m, 5m]
+edit_modes: [insert, delete, move, adjust_timing]
+playback_speeds: [0.25x, 0.5x, 1x, 2x, 4x]
 
 ```json
 {
   "{TimelineRenderer}": {
     "{LoadMausData}": "[.maus_file]:(mausData)",
-    
+
     "{RenderNodes}": {
       "(mausData.events)": "{MapToTimeline}",
       "{CreateVisualNodes}": "(nodeElements)",
       "{ConnectPaths}": "(pathElements)",
       "{ApplyStyles}": "(styledTimeline)"
     },
-    
+
     "{EditInterface}": {
       "{OnNodeSelect}": "(selectedNode)",
       "{EnableDrag}": "(dragHandler)",
@@ -211,21 +215,21 @@ tag: [#BackendSpec]
 tag: [#MathMaus]
 
 calculation_methods:
-  grid_resolution: 1920x1080_default
-  coordinate_system: cartesian_normalized
-  time_precision: millisecond
+grid_resolution: 1920x1080_default
+coordinate_system: cartesian_normalized
+time_precision: millisecond
 
 ```json
 {
   "{MathProcessor}": {
     "{ReceiveEvent}": "(rawEvent)",
-    
+
     "{CalculateGrid}": {
       "(rawEvent.x, rawEvent.y)": "{MapToGrid}:(gridX, gridY)",
       "(rawEvent.time)": "{MapToTimeline}:(timelinePos)",
       "{CreateNode}": "(gridNode)"
     },
-    
+
     "{OptimizePath}": {
       "(gridNodes[])": "{AnalyzeSequence}",
       "{DetectPatterns}": "(patterns)",
@@ -251,7 +255,7 @@ tag: [#MausDataMap]
     "duration": "total_ms",
     "resolution": "[width, height]"
   },
-  
+
   "events": [
     {
       "id": "unique_id",
@@ -267,7 +271,7 @@ tag: [#MausDataMap]
       }
     }
   ],
-  
+
   "metadata": {
     "tags": [],
     "description": "optional",
@@ -287,16 +291,19 @@ tag: [#AIInstructionSet]
 When implementing modules, follow these patterns:
 
 1. MODULE INITIALIZATION
+
    - Load dependencies using bracket notation [module_name]
    - Initialize functions using brace notation {FunctionName}
    - Store data using parenthesis notation (dataVariable)
 
 2. DATA FLOW RULES
+
    - Always validate input data before processing
    - Use the JSON bracket ruling consistently
    - Maintain clear separation between modules
 
 3. ERROR HANDLING
+
    - Use try-catch blocks to handle potential errors
 
    ```json
@@ -319,12 +326,14 @@ When implementing modules, follow these patterns:
 ### implementation_guide
 
 implementation_order:
-  1: [#EventCapture] - Core mouse monitoring
-  2: [#MathMaus] - Grid calculation engine
-  3: [#MausDataMap] - Data structure management
-  4: [#BerryWindow] - Transparent overlay
-  5: [#BerryTimeline] - Timeline interface
-  6: [#MausParser] - File I/O operations
+1: [#EventCapture] - Core mouse monitoring
+2: [#MathMaus] - Grid calculation engine
+3: [#MausDataMap] - Data structure management
+4: [#BerryWindow] - Transparent overlay
+5: [#BerryTimeline] - Timeline interface
+6: [#MausParser] - File I/O operations
+7: [#BayesianExtractor] - Probabilistic tag inference from Docs/
+8: [#ASTDiff] - Structural deltas and targeted insertions
 
 ### Testing Protocol
 
@@ -336,7 +345,7 @@ implementation_order:
       "[maus_data_map]": "{TestDataIntegrity}",
       "[berry_window]": "{TestTransparency}"
     },
-    
+
     "{IntegrationTests}": {
       "{TestDataFlow}": "[capture] -> [process] -> [display]",
       "{TestFileIO}": "[save] -> [load] -> [verify]",
@@ -353,15 +362,15 @@ implementation_order:
 tag: [#PerformanceSpecs]
 
 performance_targets:
-  capture_rate: 120Hz minimum
-  latency: <10ms input to display
-  memory: <100MB for 1hr recording
-  cpu: <5% during capture
+capture_rate: 120Hz minimum
+latency: <10ms input to display
+memory: <100MB for 1hr recording
+cpu: <5% during capture
 
 optimization_strategies:
-  event_batching: 100ms intervals
-  grid_caching: pre-calculated regions
-  timeline_virtualization: render_visible_only
+event_batching: 100ms intervals
+grid_caching: pre-calculated regions
+timeline_virtualization: render_visible_only
 
 ---
 
@@ -372,9 +381,9 @@ tag: [#PlatformIntegration]
 ### macOS Specific Requirements
 
 macos_apis:
-  accessibility: CGEventTap for mouse monitoring
-  transparency: NSWindow with opacity
-  permissions: Accessibility and Screen Recording
+accessibility: CGEventTap for mouse monitoring
+transparency: NSWindow with opacity
+permissions: Accessibility and Screen Recording
 
 ```json
 {
@@ -383,7 +392,7 @@ macos_apis:
       "accessibility": "{PromptUser}",
       "screen_recording": "{PromptUser}"
     },
-    
+
     "{InitializeCapture}": {
       "{CreateEventTap}": "(eventTapRef)",
       "{SetupRunLoop}": "(runLoopSource)",
@@ -402,25 +411,25 @@ tag: [#VisualDesign]
 ### transparent_window
 
 visual_elements:
-  grid_overlay: subtle_dots_at_intersections
-  click_indicators: ripple_animation
-  path_preview: dotted_line_between_points
-  active_area: subtle_highlight
+grid_overlay: subtle_dots_at_intersections
+click_indicators: ripple_animation
+path_preview: dotted_line_between_points
+active_area: subtle_highlight
 
 ### timeline_interface
 
 timeline_elements:
-  track_height: 60px
-  node_size: 12px_diameter
-  path_stroke: 2px_width
-  time_markers: every_second
-  zoom_indicator: bottom_right
+track_height: 60px
+node_size: 12px_diameter
+path_stroke: 2px_width
+time_markers: every_second
+zoom_indicator: bottom_right
 
-color_scheme:
-  primary: strawberry_red_#FF6B6B
-  secondary: leaf_green_#4ECDC4
-  background: dark_#1A1A2E
-  grid: subtle_white_#FFFFFF10
+color*scheme:
+primary: strawberry_red*#FF6B6B
+secondary: leaf*green*#4ECDC4
+background: dark*#1A1A2E
+grid: subtle_white*#FFFFFF10
 
 ---
 
@@ -447,21 +456,109 @@ tag: [#Extensions]
 ### Supported Export Formats
 
 export_formats:
-  native: .maus
-  automation: .applescript
-  cross_platform: .json
-  video: .mp4 with overlay
+native: .maus
+automation: .applescript
+cross_platform: .json
+video: .mp4 with overlay
 
 ---
+
+## bayesian_rule_extractor
+
+tag: [#BayesianExtractor] [#Bayes]
+
+### Overview
+
+- Implements Naive Bayes classifier trained on `Docs/` tags (e.g., `[#BerryTimeline]`).
+- Provides probabilistic evidence to augment symbolic constraints in reasoning.
+
+### Interfaces
+
+```json
+{
+  "{BayesExtractor}": {
+    "{TrainFromDocs}": "(docs_root)",
+    "{PredictDistribution}": "(text) -> { label: probability }",
+    "{SaveModel}": "(path)",
+    "{LoadModel}": "(path)"
+  }
+}
+```
+
+### Integration Points
+
+- Consumed by `[neural_symbolic_reasoner]` during `{understand_intent}` to enhance `logical_constraints` with top labels.
+- Model caches to `build/models/bayes_tags.json` and lazy-trains from `Docs/` on first use if missing.
+
+### Notes
+
+- Features: unigrams, bigrams, and file-type indicators with Laplace smoothing.
+- Follows documentation tags and data rules defined in `Docs/`.
+
+---
+
+## semantic_configuration_analysis
+
+tag: [#SemanticConfig]
+
+### Overview
+
+- Parses JSON/YAML/TOML/INI into a `SemanticDocument` of nodes.
+- Infers high-level tags (e.g., `#BerryWindow`, `#BerryTimeline`, `#MausDataMap`,
+  `#Performance`, `#Permissions`) from key presence to guide reasoning.
+
+### Interfaces
+
+```json
+{
+  "{SemanticConfigAnalyzer}": {
+    "{AnalyzeText}": "(text, filename?) -> SemanticDocument",
+    "{InferConstraints}": "(doc) -> [tags]"
+  }
+}
+```
+
+### Integration Points
+
+- Consumed by `[neural_symbolic_reasoner]` when `Context.config_text` is provided.
+- Augments `logical_constraints` alongside Bayesian predictions and symbolic KB.
+
+---
+
+## ast_differential_analysis
+
+tag: [#AST]
+
+### Overview
+
+- Computes deltas between two AST snapshots to drive targeted edits and preserve
+  structure/comments.
+
+### Interfaces
+
+```json
+{
+  "{ASTDiff}": {
+    "{HashContent}": "(content) -> sha256",
+    "{ComputeDelta}": "(old_nodes, new_nodes) -> {added, removed, modified}",
+    "{PrioritizeInsertions}": "(delta.added) -> orderedNodes"
+  }
+}
+```
+
+### AST Integration Points
+
+- Used by tooling to determine safe insertion points and minimal edits for
+  documentation and code scaffolds.
 
 ## version_control
 
 tag: [#VersionControl]
 
 versioning_strategy:
-  maus_files: semantic_versioning
-  recordings: timestamp_based
-  exports: user_defined_naming
+maus_files: semantic_versioning
+recordings: timestamp_based
+exports: user_defined_naming
 
 ```json
 {
@@ -471,7 +568,7 @@ versioning_strategy:
       "{GenerateHash}": "(versionHash)",
       "{StoreMetadata}": "(versionInfo)"
     },
-    
+
     "{CompareVersions}": {
       "[version_a, version_b]": "{Diff}",
       "{HighlightChanges}": "(changeSet)",

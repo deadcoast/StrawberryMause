@@ -1,0 +1,18 @@
+{
+  "context_compression": {
+    "algorithm": "HNSW",
+    "dimensions": 384,
+    "clusters": [
+      {
+        "id": "setup_cluster",
+        "centroid": [0.123, 0.456],
+        "members": ["Getting-Started.md", "Installation.md"],
+        "summary_tokens": 156
+      }
+    ]
+  },
+  "attention_weights": {
+    "Getting-Started.md": 0.95,
+    "Advanced-Editing.md": 0.45
+  }
+}

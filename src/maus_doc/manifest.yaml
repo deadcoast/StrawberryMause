@@ -1,0 +1,19 @@
+maus_manifest:
+  module_id: user_documentation
+  grid_position: [2, 1, 0]
+  token_weight: 3512
+  dependencies:
+    critical:
+      - ../modules/BerryWindow.md
+      - ../modules/BerryTimeline.md
+    optional:
+      - ../support/Performance.md
+  exports:
+    primary:
+      - GettingStarted
+      - Installation
+      - RecordingGuide
+    computed:
+      - UserJourney
+      - OptimalPath
+  checksum: 7f3a8b2c9d4e5f6g

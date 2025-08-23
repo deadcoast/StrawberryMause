@@ -6,8 +6,8 @@ Template
 
 INDEX.maus
 
-@signature: SHA256:${auto_generated}
-@version: 1.0.0
-@grid_coords: [0,0,0]
-@token_budget: 2048
-@compression: LZ4
+@signature_one: SHA256:${auto_generated}
+@version_one: 1.0.0
+@grid_coords_one: [0,0,0]
+@token_budget_one: 2048
+@compression_one: LZ4
